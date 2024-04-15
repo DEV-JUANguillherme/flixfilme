@@ -10,6 +10,7 @@ function Filme(){
     const [loading, setLoading] = useState(true)
     const navegate = useNavigate();
 
+    // use effect
     useEffect(()=>{
         async function loadfilme(){
 
@@ -34,6 +35,8 @@ function Filme(){
 
         }
     },[navegate, id])
+    //final useeffect
+    
 
     function salvarFilme(){
         const minhaLista = localStorage.getItem("@flixfilme")
