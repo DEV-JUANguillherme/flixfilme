@@ -8,7 +8,7 @@ function Home(){
     const [filmes, setFilmes] = useState([]);
     const [loading, setLoading] = useState(true)
 
-
+// toda vez q nossa aplicação abrir vai aparecer
     useEffect(()=>{
 
         async function loadFilmes(){
