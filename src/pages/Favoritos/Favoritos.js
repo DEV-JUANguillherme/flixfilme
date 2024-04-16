@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import './favoritos.css'
 import { toast } from 'react-toastify';
 
-import { json } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
+
 
 
 function Favoritos(){
