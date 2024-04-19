@@ -15,6 +15,7 @@ function Filme(){
     useEffect(()=>{
         async function loadfilme(){
 
+            // faz o loading da API 
             await api.get(`/movie/${id}`, {
                 params:{
                     api_key: 'f87f79a893719ec360668cb0c48cc462',
@@ -45,18 +46,22 @@ function Filme(){
         let filmesSalvos = JSON.parse(minhaLista) || [];
 
         const hasFilme = filmesSalvos.some((filmesSalvos) => filmesSalvos.id === filme.id)
-
+        
+        // verifica se o filme esta salvo
         if(hasFilme){
             toast.warn("ESSE FILME JÁ ESTA NA SUA LISTA");
             
             return;
         }
 
+
+        //salvando filmes
         filmesSalvos.push(filme);
         localStorage.setItem("@flixfilme", JSON.stringify(filmesSalvos))
         toast.success("SEU FILME FOI SALVO")
     }
 
+    // carregando filmes
     if(loading){
         return(
             <div className="filme-info">
